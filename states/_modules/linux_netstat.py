@@ -1,8 +1,10 @@
+__virtualname__= 'netstat'
+
 def __virtual__():
     """
     Only run on Linux systems
     """
-    return 'netstat' if __grains__['kernel'] == 'Linux' else False
+    return __virtualname__ if __grains__['kernel'] == 'Linux' else False
 
 def s():
     """
